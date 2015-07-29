@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project basedir="." default="build" name="BigInsightsSample">
+	<property environment="env" />
+	<property name="srcDir" value="." />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.6" />
+	<property name="source" value="1.6" />
+	<path id="classpathDir">
+		<pathelement location="bin" />
+		<pathelement location="WebContent/WEB-INF/lib/JSON4J.jar" />
+		<pathelement location="WebContent/WEB-INF/lib/javax.servlet_3.0.0.jar" />
+	</path>
+
+	<target name="init">
+		<mkdir dir="bin" />
+	</target>
+
+	<target name="clean">
+		<delete dir="bin" />
+	</target>
+
+	<target name="build" depends="build-project,build-war" />
+
+	<target name="cleanall" depends="clean" />
+
+	<target name="build-project" depends="clean,init">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}" includeantruntime="false">
+			<src path="src" />
+			<classpath refid="classpathDir" />
+		</javac>
+	</target>
+
+	<target name="build-war" depends="build-project">
+		<war destfile="bisample.war" webxml="WebContent/WEB-INF/web.xml">
+			<fileset dir="WebContent">
+				<include name="index.html" />
+				<include name="server.xml" />
+				<include name="css/sample.css" />
+				<include name="css/serviceSpec.css" />
+				<include name="css/style.css" />
+			</fileset>
+			<fileset dir=".">
+				<include name="manifest.yml"/>
+			</fileset>
+			<lib dir="WebContent/WEB-INF/lib">
+			</lib>
+			<classes dir="bin" />
+		</war>
+	</target>
+
+</project>
