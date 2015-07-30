@@ -129,6 +129,7 @@ public class BigSQLJdbcClient
     String sql = String.format (
       "load hadoop using file url '%s' with SOURCE PROPERTIES ('field.delimiter'='\t')  INTO TABLE %s overwrite",
       sheetsOutputFile, tableName);
+      System.out.println(sql);
     stmt.execute (sql);
   }
 
