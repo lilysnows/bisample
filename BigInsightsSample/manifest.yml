@@ -1,9 +1,9 @@
 ---
 applications:
-- name: your_app_name
+- name: bisample3
   memory: 256M
   instances: 1
-  host: unique_host_name_without_domain_suffix
+  host: lilyd2
   domain: mybluemix.net
   services:
-    - name_of_your_mapreduce_service_pre-created_on_bluemix
+    - Analytics for Apache Hadoop-g3
