@@ -184,7 +184,7 @@ public class BigSQLJdbcClient
   {
     // Register JDBC driver
     Class.forName (BIGSQL_JDBC_DRIVER);
-
+	System.out.println ("Enter: connectToBigSQL() bigSqlUrl="+bigSqlUrl);
     // Get a connection
     Connection con = DriverManager.getConnection (bigSqlUrl, userName, password);
     return con;
