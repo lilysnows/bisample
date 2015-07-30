@@ -191,6 +191,9 @@ public class BigInsightsServlet extends HttpServlet
           bigSqlUrl = (bigSqlUrlObj != null) ? (String) bigSqlUrlObj : "";
           break;
         }
+        else{
+        	System.out.println ("No values for"+Constants.VCAP_BIGINSIGHTS_SERVICE_KEY);
+        }
       }
     }
 

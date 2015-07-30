@@ -17,6 +17,6 @@ public class Constants
   public static final String VCAP_HIVE_URL = "HiveUrl";
   public static final String VCAP_HTTPFS_URL = "HttpfsUrl";
 
-  public static final String VCAP_BIGINSIGHTS_SERVICE_KEY = "IBM Analytics for Hadoop";
+  public static final String VCAP_BIGINSIGHTS_SERVICE_KEY = "Analytics for Apache Hadoop";
 
 }
