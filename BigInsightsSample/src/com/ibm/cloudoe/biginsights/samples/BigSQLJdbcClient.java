@@ -170,7 +170,8 @@ public class BigSQLJdbcClient
   private String getDBName (String url)
   {
     int idx = url.lastIndexOf ('/');
-    return url.substring (idx + 1);
+    //return url.substring (idx + 1);
+    return "bigsql";
   }
 
   /**
