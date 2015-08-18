@@ -1,9 +1,9 @@
 ---
 applications:
-- name: bisample3
+- name: bisample
   memory: 256M
   instances: 1
-  host: lilyd2
+  host: yadang
   domain: mybluemix.net
   services:
-    - Analytics for Apache Hadoop-g3
+    - Analytics for Apache Hadoop-ql
